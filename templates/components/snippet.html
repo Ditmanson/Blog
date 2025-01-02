@@ -1,0 +1,28 @@
+{% load static %}
+<div id="post-{{ post.id }}" class="is-success">
+    <div class="container"
+        hx-trigger='click'
+        hx-get='/api/posts/{{ post.id }}/'
+        hx-swap='none' 
+    >
+        <div class="has-text-success subtitle is-6 is-hidden-tablet">{{ post.title | truncatechars:10}}</div>
+        <div class="has-text-success subtitle is-4 is-hidden-mobile">{{ post.title }}</div>
+            
+        <div class="has-text-success ">{{post.body | truncatewords:5 }}</div>
+    </div>
+    
+    <div class="is-flex is-align-items-center">
+        <div class='mt-2 tag is-danger'>
+        <div class="is-size-7">
+            Delete
+        </div>
+            <button class="is-small delete"
+            hx-trigger='click'
+            hx-delete='/api/posts/{{ post.id }}/'
+            hx-swap='delete'
+            hx-target='#post-{{ post.id }}'
+            ></button>
+        </div>
+    </div>
+    <hr class="is-small">
+</div>
