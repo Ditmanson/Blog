@@ -18,3 +18,5 @@ def post_detail(request, pk):
                'posts':posts
                }
     return render(request, 'index.html', context)
+
+# 1:38:56

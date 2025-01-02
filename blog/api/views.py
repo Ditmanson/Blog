@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from my_blog.models import Post
 from datetime import datetime
-from datetime import datetime
 
 
 def posts(request):

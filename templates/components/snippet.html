@@ -3,7 +3,9 @@
     <div class="container"
         hx-trigger='click'
         hx-get='/api/posts/{{ post.id }}/'
-        hx-swap='none' 
+        hx-swap='none'
+        hx-push-url="true"
+        style="cursor:pointer;"
     >
         <div class="has-text-success subtitle is-6 is-hidden-tablet">{{ post.title | truncatechars:10}}</div>
         <div class="has-text-success subtitle is-4 is-hidden-mobile">{{ post.title }}</div>
